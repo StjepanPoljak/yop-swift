@@ -80,15 +80,6 @@ class ViewController: UIViewController {
             print("not found\n")
         }
 
-        let parserTest:NaivePListParser = NaivePListParser()
-
-        parserTest.parsePList(from: plistTest, with: .utf8, usingEquatableCharFunction: nil)
-
-//        for each in parserTest.parsePList(from: plistTest, with: .utf8, usingEquatableCharFunction: nil)
-//        {
-//            print("--------\nkey: \(each.key)\nvalue: \(each.value)")
-//        }
-        
         var currentKey:String?
         
         let treeTest2:YOPTree<String, Int> = YOPTree<String, Int>(withDirectives: [.blockBrackets(open: "(", closed: ")", tag: 0),
@@ -144,16 +135,6 @@ class ViewController: UIViewController {
         var resultArray:[Int] = []
         
         testParserKernel.compile(find: dataDict, in: "i am hers and she is his, if he allows she to be hers".data(using: .utf8)!, using: hash, writeResultTo: &resultArray)
-
-        //print(testParserKernel.saveToData(with: 1)!.1)
-        
-        let jsonTest = YOPJSON(test: "")
-
-        jsonTest.parseMOCK_DATA()
-//
-        jsonTest.OMParseMOCK()
-        
-
         
     }
 
